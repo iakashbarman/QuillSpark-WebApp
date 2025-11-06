@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* existing variables and body gradient should remain; we add a few precise helpers */
+
+/* CTA shadow/glow used for Get Started */
+.shadow-cta {
+  box-shadow: 0 12px 32px rgba(107,86,255,0.18), 0 6px 18px rgba(107,86,255,0.08);
+}
+
+/* stronger frosted container for large CTA box */
+.frosted {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* inset inner shadow for the frosted containers */
+.shadow-inner {
+  box-shadow: inset 0 18px 50px rgba(0,0,0,0.65);
+}
+
+/* footer bottom spacing and fine divider */
+footer a { text-decoration: none; }
+footer a:hover { color: #ffffff; }
+
+/* ensure CTA pill keeps same height across breakpoints */
+#get-started {
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* subtle responsive tweaks so box feels identical at 1280+ widths */
+@media (min-width: 1280px) {
+  .frosted { padding: 48px; }
+  .shadow-inner { box-shadow: inset 0 20px 60px rgba(0,0,0,0.66); }
+}
+
+/* maintain readable text on small screens */
+@media (max-width: 640px) {
+  .frosted { padding: 28px; }
+  .text-4xl { font-size: 1.8rem; }
+}
+
+/* scrollbar tuning for long pages */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.03); border-radius: 9999px; }
