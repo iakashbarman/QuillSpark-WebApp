@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function JoinCTA() {
+  const navigate = useNavigate();
+
   return (
     <section className="mt-20">
       <div className="max-w-5xl mx-auto px-6">
@@ -10,11 +13,13 @@ export default function JoinCTA() {
           </h3>
 
           <p className="max-w-2xl mx-auto text-center text-indigo-200 mt-4">
-            Join millions of users worldwide who have made QUILLSPARK their go-to communication platform. Experience the difference today.
+            Join millions of users worldwide who have made QUILLSPARK their
+            go-to communication platform. Experience the difference today.
           </p>
 
           <div className="mt-8 flex justify-center">
             <button
+              onClick={() => navigate("/auth")}
               id="get-started"
               className="px-10 py-3 rounded-full bg-gradient-to-r from-[#6c5cff] to-[#9a6bff] text-white font-semibold shadow-cta hover:brightness-105 transition"
             >
