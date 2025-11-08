@@ -5,14 +5,18 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 
-const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY || "";
+const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+
+if (!clerkPubKey) {
+  throw new Error("Clerk publishable key is missing");
+}
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ClerkProvider publishableKey={clerkPubKey}>
-      <BrowserRouter>
+    <BrowserRouter>
+      <ClerkProvider publishableKey={clerkPubKey}>
         <App />
-      </BrowserRouter>
-    </ClerkProvider>
+      </ClerkProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
