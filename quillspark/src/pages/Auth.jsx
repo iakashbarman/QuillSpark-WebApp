@@ -5,8 +5,6 @@ import {
   SignUp,
   SignedIn,
   SignedOut,
-  SignInButton,
-  UserButton,
 } from "@clerk/clerk-react";
 
 /* Clerk Appearance */
