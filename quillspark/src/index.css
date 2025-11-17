@@ -12,10 +12,14 @@
 /* stronger frosted container for large CTA box */
 .frosted {
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border-radius: 18px;
+  /* border-radius: 18px; */
   border: 1px solid rgba(255,255,255,0.03);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+}
+
+.divider{
+  border-right: 1px solid rgba(255,255,255,0.03);
 }
 
 /* inset inner shadow for the frosted containers */
@@ -35,10 +39,42 @@ footer a:hover { color: #ffffff; }
   justify-content: center;
 }
 
+/* Message bubble tails */
+.bubble-tail-left,
+.bubble-tail-right {
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: 12px;
+}
+
+.bubble-tail-left {
+  left: -8px;
+  border-top: 8px solid transparent;
+  border-right: 8px solid #172226; /* match left bubble bg */
+  border-bottom: 8px solid transparent;
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.35));
+}
+
+.bubble-tail-right {
+  right: -8px;
+  border-top: 8px solid transparent;
+  border-left: 8px solid #9a6bff; /* match right bubble gradient solid fallback */
+  border-bottom: 8px solid transparent;
+  transform: translateX(1px);
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.25));
+}
+
 /* subtle responsive tweaks so box feels identical at 1280+ widths */
 @media (min-width: 1280px) {
-  .frosted { padding: 48px; }
+  .frosted { padding: 20px; }
   .shadow-inner { box-shadow: inset 0 20px 60px rgba(0,0,0,0.66); }
+}
+
+/* small responsive tweak */
+@media (max-width: 1024px) {
+  .max-w-3xl { max-width: 680px; }
+  .h-\[calc\(100vh-96px\)\] { min-height: calc(100vh - 96px); }
 }
 
 /* maintain readable text on small screens */

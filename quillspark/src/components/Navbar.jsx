@@ -8,7 +8,7 @@ export default function Navbar() {
           <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#b892ff] to-[#7b5bff] flex items-center justify-center text-black font-extrabold shadow-md">
             <img src="/src/assets/chat - w.png" alt="" width="75%" />
           </div>
-          <div className="text-purple-500 font-bold tracking-wide text-2xl">
+          <div className="text-[#b892ff] font-bold tracking-wide text-2xl">
             QUILLSPARK
           </div>
         </div>
